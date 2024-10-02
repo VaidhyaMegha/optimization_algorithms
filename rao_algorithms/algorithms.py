@@ -4,6 +4,8 @@ from .penalty import constrained_objective_function
 def BMR_algorithm(bounds, num_iterations, population_size, num_variables, objective_func, constraints=None):
     population = np.random.uniform(low=bounds[:, 0], high=bounds[:, 1], size=(population_size, num_variables))
 
+    best_scores = []
+
     for iteration in range(num_iterations):
         if constraints:
             fitness = [constrained_objective_function(ind, objective_func, constraints) for ind in population]
@@ -12,6 +14,8 @@ def BMR_algorithm(bounds, num_iterations, population_size, num_variables, object
 
         best_solution = population[np.argmin(fitness)]
         mean_solution = np.mean(population, axis=0)
+        best_score = np.min(fitness)
+        best_scores.append(best_score)
 
         for i in range(population_size):
             r1, r2, r3, r4 = np.random.rand(4)
@@ -23,14 +27,15 @@ def BMR_algorithm(bounds, num_iterations, population_size, num_variables, object
             else:
                 population[i] = bounds[:, 1] - (bounds[:, 1] - bounds[:, 0]) * r3
 
-        print(f"Iteration {iteration+1}, Best Fitness: {np.min(fitness)}")
+        population = np.clip(population, bounds[:, 0], bounds[:, 1])
 
-    best_fitness = np.min(fitness)
-    return best_fitness
+    return best_solution, best_scores
 
 
 def BWR_algorithm(bounds, num_iterations, population_size, num_variables, objective_func, constraints=None):
     population = np.random.uniform(low=bounds[:, 0], high=bounds[:, 1], size=(population_size, num_variables))
+
+    best_scores = []
 
     for iteration in range(num_iterations):
         if constraints:
@@ -40,6 +45,8 @@ def BWR_algorithm(bounds, num_iterations, population_size, num_variables, object
 
         best_solution = population[np.argmin(fitness)]
         worst_solution = population[np.argmax(fitness)]
+        best_score = np.min(fitness)
+        best_scores.append(best_score)
 
         for i in range(population_size):
             r1, r2, r3, r4 = np.random.rand(4)
@@ -51,7 +58,6 @@ def BWR_algorithm(bounds, num_iterations, population_size, num_variables, object
             else:
                 population[i] = bounds[:, 1] - (bounds[:, 1] - bounds[:, 0]) * r3
 
-        print(f"Iteration {iteration+1}, Best Fitness: {np.min(fitness)}")
+        population = np.clip(population, bounds[:, 0], bounds[:, 1])
 
-    best_fitness = np.min(fitness)
-    return best_fitness
+    return best_solution, best_scores

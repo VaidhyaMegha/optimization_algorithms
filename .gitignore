@@ -1,8 +1,10 @@
 .oaenv/
 .pytest_cache/
 tests/__pycache__/
+rao_algorithms/__pycache__/
 build/
 dist/
+results/
 *.egg-info/
 .pypirc
 example.py

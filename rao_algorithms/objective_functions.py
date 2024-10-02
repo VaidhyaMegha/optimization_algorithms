@@ -1,6 +1,6 @@
 import numpy as np
 
-# Example of an objective function (Sphere function)
+# Sphere function (default objective)
 def objective_function(x):
     return np.sum(x**2)
 

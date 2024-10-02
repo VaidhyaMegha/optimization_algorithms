@@ -32,12 +32,32 @@ pip install .
 
 ## How to Use
 
+### Example: Constrained BMR Algorithm
+
+```python
+import numpy as np
+from rao_algorithms import run_optimization, BMR_algorithm, objective_function, constraint_1, constraint_2
+
+# Constrained BMR
+# ---------------
+bounds = np.array([[-100, 100]] * 2)
+num_iterations = 100
+population_size = 50
+constraints = [constraint_1, constraint_2]
+
+best_solution, best_scores = run_optimization(BMR_algorithm, bounds, num_iterations, population_size, 2, objective_function, constraints)
+print(f"Constrained BMR Best solution: {best_solution}")
+
+```
+
 ### Example: Unconstrained BMR Algorithm
 
 ```python
 import numpy as np
 from rao_algorithms import BMR_algorithm, objective_function
 
+# Unconstrained BMR
+# ---------------
 # Define the bounds for a 2D problem
 bounds = np.array([[-100, 100]] * 2)
 
@@ -47,8 +67,8 @@ population_size = 50
 num_variables = 2
 
 # Run the BMR algorithm
-best_fitness = BMR_algorithm(bounds, num_iterations, population_size, num_variables, objective_function)
-print(f"Best fitness found: {best_fitness}")
+best_solution, best_scores = BMR_algorithm(bounds, num_iterations, population_size, num_variables, objective_function)
+print(f"Unconstrained BMR Best solution found: {best_solution}")
 ```
 
 ### Example: Constrained BWR Algorithm
@@ -57,6 +77,8 @@ print(f"Best fitness found: {best_fitness}")
 import numpy as np
 from rao_algorithms import BWR_algorithm, objective_function, constraint_1, constraint_2
 
+# Constrained BWR
+# ---------------
 # Define the bounds for a 2D problem
 bounds = np.array([[-100, 100]] * 2)
 
@@ -67,8 +89,8 @@ num_variables = 2
 constraints = [constraint_1, constraint_2]
 
 # Run the BWR algorithm with constraints
-best_fitness = BWR_algorithm(bounds, num_iterations, population_size, num_variables, objective_function, constraints)
-print(f"Best fitness found: {best_fitness}")
+best_solution, best_scores = BWR_algorithm(bounds, num_iterations, population_size, num_variables, objective_function, constraints)
+print(f"Constrained BWR Best solution found: {best_solution}")
 ```
 
 ### Unit Testing
