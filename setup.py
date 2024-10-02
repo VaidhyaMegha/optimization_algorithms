@@ -7,7 +7,7 @@ def read_file(filename):
         return fh.read()
 
 setup(
-    name='optimization_algorithms',
+    name='rao_algorithms',
     version='0.1.2',
     author='Samdeep Kunkunuru',
     author_email='sandeep.kunkunuru@gmail.com',
