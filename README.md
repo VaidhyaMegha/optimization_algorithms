@@ -116,26 +116,3 @@ This package is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## References
 
 1. Ravipudi Venkata Rao, Ravikumar Shah, "BMR and BWR: Two simple metaphor-free optimization algorithms for solving real-life non-convex constrained and unconstrained problems," [arXiv:2407.11149v2](https://arxiv.org/abs/2407.11149).
-
----
-
-Happy optimizing!
-```
-
-### 5. Final Steps
-
-Once you've completed the setup:
-1. **Commit and Push to GitHub**:
-   ```bash
-   git add .
-   git commit -m "Added Dockerfile, tests, and README"
-   git push origin main
-   ```
-
-2. **Test Locally**:
-   Make sure everything works locally before sharing the package.
-
-3. **Share Your Package**:
-   You can now share the repository link, and anyone can install the package via PyPI or directly from GitHub.
-
-Let me know if you need further help!

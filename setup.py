@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='optimization_algorithms',
+    name='rao_algorithms',
     version='0.1.0',
     author='Sandeep Kunkunuru',
     author_email='sandeep.kunkunuru@gmail.com',

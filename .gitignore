@@ -3,5 +3,5 @@
 tests/__pycache__/
 build/
 dist/
-optimization_algorithms.egg-info/
+*.egg-info/
 .pypirc
