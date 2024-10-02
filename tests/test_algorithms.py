@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from optimization_algorithms import BMR_algorithm, BWR_algorithm, objective_function, constraint_1, constraint_2
+from rao_algorithms import BMR_algorithm, BWR_algorithm, objective_function, constraint_1, constraint_2
 
 class TestOptimizationAlgorithms(unittest.TestCase):
 
