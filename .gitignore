@@ -1,0 +1,6 @@
+.oaenv/
+.pytest_cache/
+build/
+dist/
+optimization_algorithms.egg-info/
+.pypirc
