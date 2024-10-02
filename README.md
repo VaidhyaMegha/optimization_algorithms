@@ -20,3 +20,122 @@ You can install this package directly from PyPI:
 
 ```bash
 pip install optimization_algorithms
+```
+
+Alternatively, you can clone this repository and install it locally:
+
+```bash
+git clone https://github.com/your-username/optimization_algorithms.git
+cd optimization_algorithms
+pip install .
+```
+
+## How to Use
+
+### Example: Unconstrained BMR Algorithm
+
+```python
+import numpy as np
+from optimization_algorithms import BMR_algorithm, objective_function
+
+# Define the bounds for a 2D problem
+bounds = np.array([[-100, 100]] * 2)
+
+# Set parameters
+num_iterations = 100
+population_size = 50
+num_variables = 2
+
+# Run the BMR algorithm
+best_fitness = BMR_algorithm(bounds, num_iterations, population_size, num_variables, objective_function)
+print(f"Best fitness found: {best_fitness}")
+```
+
+### Example: Constrained BWR Algorithm
+
+```python
+import numpy as np
+from optimization_algorithms import BWR_algorithm, objective_function, constraint_1, constraint_2
+
+# Define the bounds for a 2D problem
+bounds = np.array([[-100, 100]] * 2)
+
+# Set parameters
+num_iterations = 100
+population_size = 50
+num_variables = 2
+constraints = [constraint_1, constraint_2]
+
+# Run the BWR algorithm with constraints
+best_fitness = BWR_algorithm(bounds, num_iterations, population_size, num_variables, objective_function, constraints)
+print(f"Best fitness found: {best_fitness}")
+```
+
+### Unit Testing
+
+This package comes with unit tests. To run the tests:
+
+```bash
+python -m unittest discover -s tests
+```
+
+You can also run the tests using Docker:
+
+```bash
+docker build -t optimization-algorithms .
+docker run -it optimization-algorithms
+```
+
+## Algorithms Overview
+
+### BMR (Best-Mean-Random) Algorithm
+
+The BMR algorithm is based on the best, mean, and random solutions from the population. It works by updating solutions based on their interaction with these key elements.
+
+- **Paper Citation**: R. V. Rao, R. Shah, *BMR and BWR: Two simple metaphor-free optimization algorithms*. [arXiv:2407.11149v2](https://arxiv.org/abs/2407.11149).
+
+### BWR (Best-Worst-Random) Algorithm
+
+The BWR algorithm updates solutions by considering the best, worst, and random solutions in the population. The algorithm balances exploration and exploitation through these interactions.
+
+- **Paper Citation**: R. V. Rao, R. Shah, *BMR and BWR: Two simple metaphor-free optimization algorithms*. [arXiv:2407.11149v2](https://arxiv.org/abs/2407.11149).
+
+## Docker Support
+
+You can use the included `Dockerfile` to build and test the package quickly. To build and run the package in Docker:
+
+```bash
+docker build -t optimization-algorithms .
+docker run -it optimization-algorithms
+```
+
+## License
+
+This package is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## References
+
+1. Ravipudi Venkata Rao, Ravikumar Shah, "BMR and BWR: Two simple metaphor-free optimization algorithms for solving real-life non-convex constrained and unconstrained problems," [arXiv:2407.11149v2](https://arxiv.org/abs/2407.11149).
+
+---
+
+Happy optimizing!
+```
+
+### 5. Final Steps
+
+Once you've completed the setup:
+1. **Commit and Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Added Dockerfile, tests, and README"
+   git push origin main
+   ```
+
+2. **Test Locally**:
+   Make sure everything works locally before sharing the package.
+
+3. **Share Your Package**:
+   You can now share the repository link, and anyone can install the package via PyPI or directly from GitHub.
+
+Let me know if you need further help!
