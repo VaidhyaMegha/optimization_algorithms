@@ -8,7 +8,7 @@ def read_file(filename):
 
 setup(
     name='rao_algorithms',
-    version='0.2.0',
+    version='0.2.1',
     author='Samdeep Kunkunuru',
     author_email='sandeep.kunkunuru@gmail.com',
     description='BMR and BWR optimization algorithms with constraint handling',
