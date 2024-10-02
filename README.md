@@ -19,13 +19,13 @@ These algorithms are designed to solve both **constrained** and **unconstrained*
 You can install this package directly from PyPI:
 
 ```bash
-pip install optimization_algorithms
+pip install rao_algorithms
 ```
 
 Alternatively, you can clone this repository and install it locally:
 
 ```bash
-git clone https://github.com/your-username/optimization_algorithms.git
+git clone https://github.com/VaidhyaMegha/optimization_algorithms.git
 cd optimization_algorithms
 pip install .
 ```
@@ -36,7 +36,7 @@ pip install .
 
 ```python
 import numpy as np
-from optimization_algorithms import BMR_algorithm, objective_function
+from rao_algorithms import BMR_algorithm, objective_function
 
 # Define the bounds for a 2D problem
 bounds = np.array([[-100, 100]] * 2)
@@ -55,7 +55,7 @@ print(f"Best fitness found: {best_fitness}")
 
 ```python
 import numpy as np
-from optimization_algorithms import BWR_algorithm, objective_function, constraint_1, constraint_2
+from rao_algorithms import BWR_algorithm, objective_function, constraint_1, constraint_2
 
 # Define the bounds for a 2D problem
 bounds = np.array([[-100, 100]] * 2)
